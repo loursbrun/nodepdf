@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { saveAs } from 'file-saver';
+import { Label, Button } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css';
 
 import './App.css';
 
@@ -12,7 +14,7 @@ class App extends Component {
     price2: 55,
   }
 
-  handleChange = ({ target: { value, name }}) => this.setState({ [name]: value })
+  handleChange = ({ target: { value, name } }) => this.setState({ [name]: value })
 
   createAndDownloadPdf = () => {
     axios.post('/create-pdf', this.state)
@@ -27,7 +29,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <input type="text" placeholder="Name" name="name" onChange={this.handleChange}/>
+        <Label style={{}}>hello!</Label>
+        <Button inverted color='red'>
+          Red
+      </Button>
+        <input type="text" placeholder="Name" name="name" onChange={this.handleChange} />
         <input type="number" placeholder="Receipt ID" name="receiptId" onChange={this.handleChange} />
         <input type="number" placeholder="Price 1" name="price1" onChange={this.handleChange} />
         <input type="number" placeholder="Price 2" name="price2" onChange={this.handleChange} />
