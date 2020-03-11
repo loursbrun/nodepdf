@@ -6,10 +6,10 @@ import './App.css';
 
 class App extends Component {
   state = {
-    name: '',
-    receiptId: 0,
-    price1: 0,
-    price2: 0,
+    name: 'coco',
+    receiptId: 1,
+    price1: 100,
+    price2: 55,
   }
 
   handleChange = ({ target: { value, name }}) => this.setState({ [name]: value })
